@@ -3,8 +3,10 @@ require_once "connect.php";
 class Usuarios
 {
     private PDO $pdo;
+
     public function __construct($pdo)
     {
+
         $this->pdo = $pdo;
     }
     public function listarTodos()
@@ -34,6 +36,7 @@ class Usuarios
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':email', $email);
         $sha1 = sha1($senha);
         $stmt->bindParam(':senha', $sha1);
 
