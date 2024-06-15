@@ -27,5 +27,4 @@ global$pdo;
 require_once"Usuarios.php";
 $usuario = new Usuarios($pdo);
 $lista = $usuario->listarTodos();
-die();
 ?>
