@@ -38,13 +38,17 @@ class usuarios
         $stmt->bindParam(':senha', $sha1);
 
         $stmt->execute();
+
+        return $stmt->rowCount();
     }
     public function excluirUsuario($id)
     {
         $sql = "DELETE FROM usuarios WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        
+
         $stmt->execute();
+
+        return $stmt->rowCount();
     }
 }
