@@ -3,7 +3,7 @@ global $pdo;
 require_once ("connect.php");
 require_once("Usuarios.php");
 
-$usuario = new usuarios($pdo);
+$usuario = new Usuarios($pdo);
 
 $lista = $usuario->listarTodos();
 ?>
@@ -19,7 +19,7 @@ $lista = $usuario->listarTodos();
 </head>
 <body>
 <main>
-    <h2><a href="formulariocadastro.php">Cadastrar um novo usuário</a></h2><br>
+    <h2><a href="formcadastro.php">Cadastrar um novo usuário</a></h2><br>
 </main>
 <p>Listagem de usuários:</p>
 <table>
@@ -41,7 +41,7 @@ $lista = $usuario->listarTodos();
             <a href="editardados.php?id=<?= $user['id']; ?>">Editar dados</a>
         </td>
         <td>
-            <a href="excluirdados.php?id=<?= $user['id']; ?>">Ecluir usuários</a>
+            <a href="excluirdados.php?id=<?= $user['id']; ?>">Excluir usuário</a>
         </td>
     </tr>
     <?php endforeach;?>

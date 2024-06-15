@@ -1,7 +1,4 @@
 <?php
-global $pdo;
-require_once "Usuarios.php";
-require_once "index.php";
 
 $dbFile = 'bancocrud.sqlite';
 
