@@ -1,6 +1,6 @@
 <?php
-
-class usuarios
+require_once "connect.php";
+class Usuarios
 {
     private PDO $pdo;
     public function __construct($pdo)
